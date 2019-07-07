@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
 
   @override
   void initState() {
-
+    
     subscription=collectionReference.snapshots().listen((datasnap){
 
       setState(() {
