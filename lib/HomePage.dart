@@ -28,10 +28,7 @@ class _HomeState extends State<Home> {
 
     super.initState();
   }
-
-
-
-
+  
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -67,7 +64,7 @@ class _HomeState extends State<Home> {
                     ),
 
                     new SizedBox(height: 5.0,),
-                    
+
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: new Text(
