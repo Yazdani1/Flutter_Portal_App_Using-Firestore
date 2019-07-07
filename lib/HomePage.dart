@@ -12,7 +12,6 @@ class _HomeState extends State<Home> {
   StreamSubscription<QuerySnapshot>subscription;
 
   List<DocumentSnapshot>snapshot;
-
   CollectionReference collectionReference=Firestore.instance.collection("AllDoda");
 
   @override
