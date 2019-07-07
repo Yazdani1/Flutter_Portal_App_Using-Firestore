@@ -44,7 +44,6 @@ class _HomeState extends State<Home> {
       body: new ListView.builder(
           itemCount: snapshot.length,
         itemBuilder: (context,index){
-          
             return Card(
               elevation: 10.0,
               margin: EdgeInsets.all(10.0),
@@ -85,7 +84,7 @@ class _HomeState extends State<Home> {
               ),
               
             );
-          
+
         }
       ),
       
