@@ -138,7 +138,7 @@ class _DataHomeState extends State<DataHome> {
                                     ),
                                     ),
                                     onTap: (){
-                                      
+
                                     },
                                   ),
                                 )
@@ -169,7 +169,6 @@ class _DataHomeState extends State<DataHome> {
                               flex: 2,
                             child: new Icon(Icons.comment,color: Colors.green,),
                           ),
-                          
                           
                           new Expanded(
                               flex: 2,
