@@ -112,7 +112,6 @@ class _DataHomeState extends State<DataHome> {
                             child: new Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: <Widget>[
-
                                 new Container(
                                   child: new Text(
                                     snapshot[index].data["des"],
@@ -124,7 +123,7 @@ class _DataHomeState extends State<DataHome> {
                                   ),
                                 ),
                                 new SizedBox(height: 5.0,),
-                                
+
                                 new Container(
                                   padding: EdgeInsets.all(7.0),
                                   decoration: new BoxDecoration(
