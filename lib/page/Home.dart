@@ -82,6 +82,7 @@ class _DataHomeState extends State<DataHome> {
                     new Container(
                       margin: EdgeInsets.all(10.0),
                       child: new Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           
                           new Expanded(
@@ -89,15 +90,24 @@ class _DataHomeState extends State<DataHome> {
                             child: new ClipRRect(
                               borderRadius: BorderRadius.circular(15.0),
                               child:new Image.network(snapshot[index].data["url"],
-                              height: 130.0,
+                              height: 160.0,
                               fit: BoxFit.cover,
                             ),
                             ),
                           ),
-                          new SizedBox(width: 5.0,),
+                          new SizedBox(width: 10.0,),
 
-                          
-                          
+                          new Expanded(
+                              flex: 2,
+                            child: new Text(snapshot[index].data["des"],
+                            maxLines: 7,
+                            style: TextStyle(
+                              fontSize: 17.0,
+                              color: Colors.black,
+                            ),
+                            ),
+                          )
+
                         ],
                       ),
                     ),//end second container..
