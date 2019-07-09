@@ -53,6 +53,9 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
           ],
         ),
       ),
+      drawer: new Drawer(
+
+      ),
 
       body: new TabBarView(
           controller: controller,

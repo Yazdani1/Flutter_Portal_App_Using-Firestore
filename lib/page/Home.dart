@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
 
+
 class DataHome extends StatefulWidget {
   @override
   _DataHomeState createState() => new _DataHomeState();
 }
 
 class _DataHomeState extends State<DataHome> {
+
+  int sum=0;
 
   StreamSubscription<QuerySnapshot>subscription;
   List<DocumentSnapshot>snapshot;
@@ -114,7 +117,38 @@ class _DataHomeState extends State<DataHome> {
 
                     //start third container
                     new Container(
+                      margin: EdgeInsets.all(10.0),
+                      child: new Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          
+                          new Expanded(
+                              flex: 2,
+                            child: new Container(
+                              child: InkWell(
+                                  child: new Icon(Icons.thumb_up),
+                                onTap: (){
+                                  new Icon(Icons.thumb_up,color: Colors.red,);
+                                },
+                              ),
+                            ),
+                          ),
 
+                          
+                          new Expanded(
+                              flex: 2,
+                            child: new Container(
+                              child: InkWell(
+                                  child: new Icon(Icons.share),
+                                onTap: (){
+
+                                },
+                              ),
+                            ),
+                          )
+                          
+                        ],
+                      ),
                     ),//end third container..
 
                   ],
