@@ -2,30 +2,35 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
 
+import 'page/Home.dart' as datahome;
+import 'page/Employee.dart' as employy;
+import 'page/Popular.dart' as popular;
+
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => new _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
 
-  StreamSubscription<QuerySnapshot>subscription;
-  
-  List<DocumentSnapshot>snapshot;
-  CollectionReference collectionReference=Firestore.instance.collection("AllDoda");
+  TabController controller;
 
   @override
   void initState() {
 
-    subscription=collectionReference.snapshots().listen((datasnap){
+    controller=new TabController(length: 3, vsync: this);
 
-      setState(() {
-        snapshot=datasnap.documents;
-      });
-
-    });
     super.initState();
   }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,56 +39,30 @@ class _HomeState extends State<Home> {
       appBar: new AppBar(
         title: new Text("E-Commerce App"),
         backgroundColor: Colors.green,
+        bottom: new TabBar(
+           controller: controller,
+          indicatorColor: Colors.white,
+          indicatorWeight: 3.0,
+          indicatorPadding: EdgeInsets.all(5.0),
+          tabs: <Widget>[
+
+            new Tab(icon: new Icon(Icons.home),text: "Home",),
+            new Tab(icon: new Icon(Icons.list),text: "Employee",),
+            new Tab(icon: new Icon(Icons.print),text: "Popular",)
+
+          ],
+        ),
       ),
-      
-      body: new ListView.builder(
-          itemCount: snapshot.length,
-        itemBuilder: (context,index){
-            return Card(
-              elevation: 10.0,
-              margin: EdgeInsets.all(10.0),
-              shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(15.0)
-              ),
-              child: new Container(
-                height: 100.0,
-                child: new Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
 
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Text(snapshot[index].data["title"],
-                      style: TextStyle(
-                        fontSize: 22.0,
-                        color: Colors.deepPurple
-                      ),
-                      ),
-                    ),
+      body: new TabBarView(
+          controller: controller,
+        children: <Widget>[
 
-                    new SizedBox(height: 5.0,),
-
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: new Text(
-                        snapshot[index].data["des"],
-                        style: TextStyle(
-                          fontSize: 17.0,
-                          color: Colors.green
-                        ),
-                      ),
-                    )
-
-                  ],
-                ),
-              ),
-              
-            );
-
-        }
+          new datahome.DataHome(),
+          new employy.Employee(),
+          new popular.Popular()
+        ],
       ),
-      
-      
 
     );
   }
