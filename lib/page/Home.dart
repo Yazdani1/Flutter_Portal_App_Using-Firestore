@@ -130,11 +130,16 @@ class _DataHomeState extends State<DataHome> {
                                     borderRadius: BorderRadius.circular(15.0),
                                     color: color
                                   ),
-                                  child: new Text("Read More",
-                                  style: TextStyle(
-                                    fontSize: 17.0,
-                                    color: Colors.white
-                                  ),
+                                  child: InkWell(
+                                    child: new Text("Read More",
+                                    style: TextStyle(
+                                      fontSize: 15.0,
+                                      color: Colors.white
+                                    ),
+                                    ),
+                                    onTap: (){
+                                      
+                                    },
                                   ),
                                 )
 
