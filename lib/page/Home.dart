@@ -169,7 +169,7 @@ class _DataHomeState extends State<DataHome> {
                               flex: 2,
                             child: new Icon(Icons.comment,color: Colors.green,),
                           ),
-                          
+
                           new Expanded(
                               flex: 2,
                             child: new Container(
@@ -180,7 +180,6 @@ class _DataHomeState extends State<DataHome> {
                         ],
                       ),
                     ),//end third container..
-
                   ],
                 ),
               ),
