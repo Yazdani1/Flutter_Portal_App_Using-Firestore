@@ -128,12 +128,7 @@ class _DataHomeState extends State<DataHome> {
                                   padding: EdgeInsets.all(7.0),
                                   decoration: new BoxDecoration(
                                     borderRadius: BorderRadius.circular(15.0),
-                                    border: Border.all(
-                                      style: BorderStyle.solid,
-                                      width: 2.0,
-                                      color: Colors.green
-                                    ),
-                                    color: Colors.orange
+                                    color: color
                                   ),
                                   child: new Text("Read More",
                                   style: TextStyle(
