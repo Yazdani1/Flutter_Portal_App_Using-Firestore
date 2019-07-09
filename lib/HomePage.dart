@@ -48,7 +48,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
 
             new Tab(icon: new Icon(Icons.home),text: "Home",),
             new Tab(icon: new Icon(Icons.list),text: "Employee",),
-            new Tab(icon: new Icon(Icons.print),text: "Popular",)
+            new Tab(icon: new Icon(Icons.poll),text: "Popular",)
 
           ],
         ),
