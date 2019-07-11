@@ -44,11 +44,18 @@ class _DataHomeState extends State<DataHome> {
           itemCount: snapshot.length,
         itemBuilder: (context,index){
           color=_color[index % _color.length];
+
+          if(snapshot.length<0){
+            return Center(
+              child: new Text("Loading..."),
+            );
+          }else{
+
             return Card(
               elevation: 10.0,
               margin: EdgeInsets.all(10.0),
               shape: BeveledRectangleBorder(
-                borderRadius: BorderRadius.circular(20.0)
+                  borderRadius: BorderRadius.circular(20.0)
               ),
               child: new Container(
                 height: 300.0,
@@ -71,15 +78,15 @@ class _DataHomeState extends State<DataHome> {
                             ),
                           ),
                           new SizedBox(width: 10.0,),
-                          
+
                           new Expanded(
-                              flex: 4,
+                            flex: 4,
                             child: new Text(snapshot[index].data["title"],
-                            maxLines: 1,
-                            style: TextStyle(
-                              fontSize: 20.0,
-                              color: Colors.black
-                            ),
+                              maxLines: 1,
+                              style: TextStyle(
+                                  fontSize: 20.0,
+                                  color: Colors.black
+                              ),
                             ),
                           )
 
@@ -94,57 +101,57 @@ class _DataHomeState extends State<DataHome> {
                       child: new Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          
+
                           new Expanded(
-                              flex: 1,
+                            flex: 1,
                             child: new ClipRRect(
                               borderRadius: BorderRadius.circular(15.0),
                               child:new Image.network(snapshot[index].data["url"],
-                              height: 160.0,
-                              fit: BoxFit.cover,
-                            ),
+                                height: 160.0,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                           new SizedBox(width: 10.0,),
 
                           new Expanded(
                               flex: 2,
-                            child: new Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                new Container(
-                                  child: new Text(
-                                    snapshot[index].data["des"],
-                                    maxLines: 5,
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      color: Colors.black
+                              child: new Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  new Container(
+                                    child: new Text(
+                                      snapshot[index].data["des"],
+                                      maxLines: 5,
+                                      style: TextStyle(
+                                          fontSize: 18.0,
+                                          color: Colors.black
+                                      ),
                                     ),
                                   ),
-                                ),
-                                new SizedBox(height: 5.0,),
+                                  new SizedBox(height: 5.0,),
 
-                                new Container(
-                                  padding: EdgeInsets.all(7.0),
-                                  decoration: new BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15.0),
-                                    color: color
-                                  ),
-                                  child: InkWell(
-                                    child: new Text("Read More",
-                                    style: TextStyle(
-                                      fontSize: 15.0,
-                                      color: Colors.white
+                                  new Container(
+                                    padding: EdgeInsets.all(7.0),
+                                    decoration: new BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15.0),
+                                        color: color
                                     ),
+                                    child: InkWell(
+                                      child: new Text("Read More",
+                                        style: TextStyle(
+                                            fontSize: 15.0,
+                                            color: Colors.white
+                                        ),
+                                      ),
+                                      onTap: (){
+
+                                      },
                                     ),
-                                    onTap: (){
+                                  )
 
-                                    },
-                                  ),
-                                )
-
-                              ],
-                            )
+                                ],
+                              )
                           )
 
                         ],
@@ -157,26 +164,26 @@ class _DataHomeState extends State<DataHome> {
                       child: new Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          
+
                           new Expanded(
-                              flex: 2,
+                            flex: 2,
                             child: new Container(
-                             child: new Icon(Icons.thumb_up),
+                              child: new Icon(Icons.thumb_up),
                             ),
                           ),
-                          
+
                           new Expanded(
-                              flex: 2,
+                            flex: 2,
                             child: new Icon(Icons.comment,color: Colors.green,),
                           ),
 
                           new Expanded(
-                              flex: 2,
+                            flex: 2,
                             child: new Container(
-                            child: new Icon(Icons.share,color: Colors.brown,),
+                              child: new Icon(Icons.share,color: Colors.brown,),
                             ),
                           )
-                          
+
                         ],
                       ),
                     ),//end third container..
@@ -184,6 +191,9 @@ class _DataHomeState extends State<DataHome> {
                 ),
               ),
             );
+
+          }
+
         }
       ),
 
