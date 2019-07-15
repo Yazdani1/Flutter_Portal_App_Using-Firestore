@@ -72,7 +72,6 @@ class _HomeDetailsState extends State<HomeDetails> {
                           ),
                           ),
                         )
-
                       ],
                     ),
                   ),
