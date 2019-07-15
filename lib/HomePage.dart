@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
-
+import 'page/Employee.dart';
 import 'page/Home.dart' as datahome;
 import 'page/Employee.dart' as employy;
 import 'page/Popular.dart' as popular;
@@ -54,9 +54,41 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
         ),
       ),
       drawer: new Drawer(
-
+        child: new ListView(
+          children: <Widget>[
+            
+            new UserAccountsDrawerHeader(
+                accountName: new Text("Code With YDC"), 
+                accountEmail: new Text("ydc@gmail.com"),
+              decoration: new BoxDecoration(
+                color: Colors.green
+              ),
+            ),
+            new ListTile(
+              title: new Text("Home"),
+              leading: new Icon(Icons.home),
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+            ),
+            new ListTile(
+              title: new Text("Employee"),
+              leading: new Icon(Icons.shuffle),
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+            ),
+            new ListTile(
+              title: new Text("Popular"),
+              leading: new Icon(Icons.poll),
+              onTap: (){
+                Navigator.of(context).pop();
+              },
+            )
+            
+          ],
+        ),
       ),
-
       body: new TabBarView(
           controller: controller,
         children: <Widget>[
