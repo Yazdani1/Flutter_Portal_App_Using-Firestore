@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
+import 'package:flutter_firebase_ecommerce/DetalPage/HomeDetails.dart';
 
 
 class DataHome extends StatefulWidget {
@@ -145,7 +146,7 @@ class _DataHomeState extends State<DataHome> {
                                         ),
                                       ),
                                       onTap: (){
-
+                                        Navigator.of(context).push(new MaterialPageRoute(builder: (context)=>HomeDetails(snapshot[index])));
                                       },
                                     ),
                                   )
