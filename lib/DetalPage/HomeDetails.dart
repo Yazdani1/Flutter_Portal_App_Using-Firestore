@@ -37,7 +37,62 @@ class _HomeDetailsState extends State<HomeDetails> {
                 ),
               ),
             ),
+          ),
+
+          new SizedBox(height: 5.0,),
+
+          new Container(
+            margin: EdgeInsets.all(10.0),
+
+            child: new Card(
+              elevation: 10.0,
+              
+              child: new Column(
+                children: <Widget>[
+
+                  new Container(
+                    padding: EdgeInsets.all(6.0),
+                    child: new Row(
+                      children: <Widget>[
+
+                        new CircleAvatar(
+                          backgroundColor: Colors.green,
+                          child: new Text(widget.snapshot.data["title"][0]),
+                          foregroundColor: Colors.white,
+                        ),
+
+                        new SizedBox(width: 5.0,),
+
+                        Padding(
+                          padding: const EdgeInsets.all(6.0),
+                          child: new Text(widget.snapshot.data["title"],
+                          style: TextStyle(
+                            fontSize: 22.0,
+                            color: Colors.green
+                          ),
+                          ),
+                        )
+
+                      ],
+                    ),
+                  ),
+                  new SizedBox(height: 5.0,),
+
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: new Text(widget.snapshot.data["des"],
+                    style: TextStyle(
+                      fontSize: 17.0,
+                      color: Colors.black
+                    ),
+                    ),
+                  )
+
+                ],
+              ),
+            ),
           )
+
 
         ],
       ),
