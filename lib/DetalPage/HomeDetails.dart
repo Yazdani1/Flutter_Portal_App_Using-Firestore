@@ -77,7 +77,6 @@ class _HomeDetailsState extends State<HomeDetails> {
                     ),
                   ),
                   new SizedBox(height: 5.0,),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: new Text(widget.snapshot.data["des"],
