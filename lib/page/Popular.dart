@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'dart:async';
+import 'package:flutter_firebase_ecommerce/DetalPage/PopularDetails.dart';
 
 class Popular extends StatefulWidget {
   @override
@@ -78,12 +79,17 @@ class _PopularState extends State<Popular> {
                                ),
                                new SizedBox(width: 5.0,),
 
-                               new Text(snapshot[index].data["title"],
-                               maxLines: 1,
-                               style: TextStyle(
-                                 fontSize: 22.0,
-                                 color: Colors.green
-                               ),
+                               InkWell(
+                                 child: new Text(snapshot[index].data["title"],
+                                 maxLines: 1,
+                                 style: TextStyle(
+                                   fontSize: 22.0,
+                                   color: Colors.green
+                                 ),
+                                 ),
+                                 onTap: (){
+                                   Navigator.of(context).push(new MaterialPageRoute(builder: (context)=>PopularDetails(snapshot[index])));
+                                 },
                                )
 
                              ],

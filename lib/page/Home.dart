@@ -24,6 +24,7 @@ class _DataHomeState extends State<DataHome> {
     subscription=collectionReference.snapshots().listen((datasnap){
       setState(() {
         snapshot=datasnap.documents;
+
       });
     });
 

@@ -21,11 +21,15 @@ class _EmployeeState extends State<Employee> {
     subscription=collectionReference.snapshots().listen((datasnap){
       setState(() {
         snapshot=datasnap.documents;
+
       });
     });
     
     super.initState();
+
   }
+
+
   
 
   @override
