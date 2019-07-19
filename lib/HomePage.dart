@@ -5,6 +5,7 @@ import 'page/Employee.dart';
 import 'page/Home.dart' as datahome;
 import 'page/Employee.dart' as employy;
 import 'page/Popular.dart' as popular;
+import 'package:flutter_firebase_ecommerce/page/Employee.dart';
 
 
 class Home extends StatefulWidget {
@@ -20,6 +21,8 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
   void initState() {
 
     controller=new TabController(length: 3, vsync: this);
+
+    //Timer(Duration(seconds: 3),()=>Navigator.of(context).push(new MaterialPageRoute(builder: (con)=>Employee())));
 
     super.initState();
   }
