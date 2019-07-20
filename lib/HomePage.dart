@@ -38,7 +38,6 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-
       appBar: new AppBar(
         title: new Text("E-Commerce App"),
         backgroundColor: Colors.green,
@@ -59,7 +58,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
       drawer: new Drawer(
         child: new ListView(
           children: <Widget>[
-            
+
             new UserAccountsDrawerHeader(
                 accountName: new Text("Code With YDC"), 
                 accountEmail: new Text("ydc@gmail.com"),
@@ -74,6 +73,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                 Navigator.of(context).pop();
               },
             ),
+
             new ListTile(
               title: new Text("Employee"),
               leading: new Icon(Icons.shuffle),
@@ -81,6 +81,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                 Navigator.of(context).pop();
               },
             ),
+
             new ListTile(
               title: new Text("Popular"),
               leading: new Icon(Icons.poll),
@@ -88,6 +89,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                 Navigator.of(context).pop();
               },
             )
+            
             
           ],
         ),
