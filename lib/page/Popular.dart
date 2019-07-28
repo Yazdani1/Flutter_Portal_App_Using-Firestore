@@ -63,7 +63,6 @@ class _PopularState extends State<Popular> {
                      ),
                    ),
                    new SizedBox(height: 5.0,),
-
                    
                    new Container(
                      margin: EdgeInsets.all(5.0),
