@@ -16,13 +16,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
 
   TabController controller;
-
   @override
   void initState() {
 
     controller=new TabController(length: 3, vsync: this);
 
-    //Timer(Duration(seconds: 3),()=>Navigator.of(context).push(new MaterialPageRoute(builder: (con)=>Employee())));
+    Timer(Duration(seconds: 3),()=>Navigator.of(context).push(new MaterialPageRoute(builder: (con)=>Employee())));
 
     super.initState();
   }
@@ -89,7 +88,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
                 Navigator.of(context).pop();
               },
             )
-            
+
             
           ],
         ),
