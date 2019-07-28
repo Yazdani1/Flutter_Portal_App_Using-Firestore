@@ -21,7 +21,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
 
     controller=new TabController(length: 3, vsync: this);
 
-    Timer(Duration(seconds: 3),()=>Navigator.of(context).push(new MaterialPageRoute(builder: (con)=>Employee())));
+    //Timer(Duration(seconds: 3),()=>Navigator.of(context).push(new MaterialPageRoute(builder: (con)=>Employee())));
 
     super.initState();
   }
@@ -38,7 +38,7 @@ class _HomeState extends State<Home>with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text("E-Commerce App"),
+        title: new Text("Bright Portal App"),
         backgroundColor: Colors.green,
         bottom: new TabBar(
            controller: controller,
